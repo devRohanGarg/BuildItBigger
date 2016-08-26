@@ -26,4 +26,6 @@ dependencies {
     compile 'com.google.android.gms:play-services-ads:9.4.0'
     // Added for javaJoker library
     compile project(':javaJoker')
+    // Added for jokeViewer library
+    compile project(':jokeViewer')
 }
