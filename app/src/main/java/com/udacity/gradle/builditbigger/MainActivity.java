@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.udacity.gradle.builditbigger.javajoker.Joker;
 import com.udacity.gradle.builditbigger.jokeviewer.JokeViewerActivity;
 
 
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     public void tellJoke(View view) {
         Intent i = new Intent(this, JokeViewerActivity.class);
         String JOKE_TAG = "JOKE";
-        i.putExtra(JOKE_TAG, Joker.tellJoke());
+//        i.putExtra(JOKE_TAG, Joker.tellJoke());
         startActivity(i);
     }
 
