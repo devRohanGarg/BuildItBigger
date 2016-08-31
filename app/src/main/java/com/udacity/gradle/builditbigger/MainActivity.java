@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.udacity.gradle.builditbigger.Utils.EndpointsAsyncTask;
 import com.udacity.gradle.builditbigger.jokeviewer.JokeViewerActivity;
 
 
@@ -42,10 +43,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        Intent i = new Intent(this, JokeViewerActivity.class);
-        String JOKE_TAG = "JOKE";
-//        i.putExtra(JOKE_TAG, Joker.tellJoke());
-        startActivity(i);
+
+        new EndpointsAsyncTask(new EndpointsAsyncTask.Listener() {
+            @Override
+            public void onJokeLoaded(String joke) {
+                Intent intent = new Intent(getApplicationContext(), JokeViewerActivity.class);
+                intent.putExtra("JOKE", joke);
+                startActivity(intent);
+            }
+        }).execute();
     }
 
 
