@@ -42,14 +42,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view) {
-
+    public void tellJoke(final View view) {
+        view.setEnabled(false);
         new EndpointsAsyncTask(this, new EndpointsAsyncTask.Listener() {
             @Override
             public void onJokeLoaded(String joke) {
                 Intent intent = new Intent(getApplicationContext(), JokeViewerActivity.class);
                 intent.putExtra("JOKE", joke);
                 startActivity(intent);
+                view.setEnabled(false);
             }
         }).execute();
     }
