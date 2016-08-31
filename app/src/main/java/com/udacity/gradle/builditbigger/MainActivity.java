@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
 
-        new EndpointsAsyncTask(new EndpointsAsyncTask.Listener() {
+        new EndpointsAsyncTask(this, new EndpointsAsyncTask.Listener() {
             @Override
             public void onJokeLoaded(String joke) {
                 Intent intent = new Intent(getApplicationContext(), JokeViewerActivity.class);
