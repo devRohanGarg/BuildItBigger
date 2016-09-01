@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), JokeViewerActivity.class);
                 intent.putExtra("JOKE", joke);
                 startActivity(intent);
-                view.setEnabled(false);
+                view.setEnabled(true);
             }
         }).execute();
     }

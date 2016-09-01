@@ -13,16 +13,17 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     productFlavors {
         free {
-            applicationId "com.udacity.gradle.builditbigger"
+            applicationId "com.udacity.gradle.builditbigger.free"
         }
         paid {
-            applicationId "com.udacity.gradle.builditbigger.pro"
+            applicationId "com.udacity.gradle.builditbigger.paid"
         }
     }
     configurations.all {
