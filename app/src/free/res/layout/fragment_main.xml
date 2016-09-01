@@ -13,15 +13,24 @@
         android:id="@+id/instructions_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:text="@string/instructions" />
 
-    <Button
+    <dev.rg.ProgressButton.iml.ActionProcessButton xmlns:support_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/tell_joke"
-        android:layout_width="wrap_content"
+        android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/instructions_text_view"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
         android:onClick="tellJoke"
         android:text="@string/button_text"
+        android:textColor="@android:color/white"
+        support_view:pb_colorProgress="@android:color/darker_gray"
+        support_view:pb_cornerRadius="4dp"
+        support_view:pb_textComplete="Loaded"
+        support_view:pb_textError="Error"
+        support_view:pb_textProgress="Loading"
 
         />
 
