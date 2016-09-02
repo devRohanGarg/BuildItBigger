@@ -45,3 +45,30 @@ dependencies {
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support:support-annotations:24.2.0'
 }
+
+/*
+Gradle task that:
+
+1) Launches the GCE local development server
+2) Runs all tests
+3) Shuts the server down again
+*/
+task testProject {
+    dependsOn(['startDevServer', 'runTests', 'shutdownDevServer'])
+}
+
+task startDevServer {
+    dependsOn ':backend:appengineRun'
+    evaluationDependsOn(":backend")
+    project(':backend').appengine.daemon = true
+}
+
+task runTests {
+    dependsOn ':app:connectedAndroidTest'
+    mustRunAfter "startDevServer"
+}
+
+task shutdownDevServer {
+    dependsOn ':backend:appengineStop'
+    mustRunAfter "runTests"
+}
