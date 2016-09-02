@@ -13,7 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@string/instructions" />
+        android:text="@string/instructions"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <dev.rg.ProgressButton.iml.ActionProcessButton xmlns:support_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/tell_joke"
@@ -23,6 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="8dp"
         android:text="@string/button_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@android:color/white"
         support_view:pb_colorProgress="@android:color/darker_gray"
         support_view:pb_cornerRadius="4dp"
